@@ -14,7 +14,7 @@ body {
    font-family: Arial, sans-serif; /* Fallback font */
    margin: 0; /* Remove default margin */
    padding: 0; /* Remove default padding */
-   background-image: url('your-background-image.jpg'); /* Set background image */
+   background-image: url('./images/Green\ Modern\ Beach\ View\ Desktop\ Wallpaper\ \(1\).png'); /* Set background image */
    background-repeat: no-repeat; /* Prevent background repetition */
    background-size: cover; /* Ensure the background covers the entire viewport */
    display: flex; /* Enable flexbox layout */

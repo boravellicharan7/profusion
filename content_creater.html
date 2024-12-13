@@ -50,7 +50,8 @@
         }
 
         // Function to set the background image based on the selected zone
-        function setBackground(zone) {
+        if(screen.width>768){
+            function setBackground(zone) {
             const body = document.body;
 
             // Define different background images for different zones
@@ -65,6 +66,7 @@
 
             // Set background based on the selected zone; default background if zone not found
             body.style.backgroundImage = zoneBackgrounds[zone] || "url('images/workingtogether.jpg')";
+        }
         }
 
         // Get the selected zone from the query parameter 'zone'

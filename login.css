@@ -132,6 +132,30 @@ button[type="submit"]:hover, #CreateAcc:hover {
 /*           Media Queries        */
 /* ============================== */
 
+/* For large screens (above 1200px) */
+@media (min-width: 1200px) {
+    body {
+        justify-content: center; /* Center the content vertically and horizontally */
+    }
+
+    #loginSection, #registerSection {
+        width: 40%; /* Reduced width for large screens */
+        padding: 50px; /* Increased padding */
+    }
+}
+
+/* For tablets and mid-sized screens (up to 1024px) */
+@media (max-width: 1024px) {
+    #loginSection, #registerSection {
+        width: 60%; /* Slightly reduced width for tablets */
+        padding: 40px; /* Adjusted padding */
+    }
+
+    body {
+        justify-content: flex-start; /* Align content to the top */
+    }
+}
+
 /* For devices with width up to 768px */
 @media (max-width: 768px) {
     #loginSection, #registerSection {
