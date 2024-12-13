@@ -1,0 +1,178 @@
+/* Importing Google Fonts for custom typography */
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cinzel+Decorative&family=Funnel+Display:wght@300..800&family=Macondo+Swash+Caps&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Space+Grotesk:wght@300..700&family=WindSong:wght@400;500&display=swap');
+
+/* General Body Styling */
+body {
+    /* Set background image and properties */
+    background-image: url("./images/Green\ Modern\ Beach\ View\ Desktop\ Wallpaper\ \(1\).png"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Flexbox layout to center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgb(240, 230, 230); /* Subtle background color */
+    font-family: "Funnel Display", sans-serif; /* Custom font for the body text */
+}
+
+/* Data Section Styling */
+#dataSection {
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 2px 2px 20px 8px black; /* Drop shadow for depth */
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Maximum width */
+    margin-top: 50px;
+    opacity: 0.9; /* Slight transparency */
+    background: transparent; /* Transparent background for a modern feel */
+    color: black; /* Text color */
+}
+
+/* User Card Styling */
+.user-card {
+    border: 1px solid rgb(70, 20, 20); /* Dark red border */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    color: black; /* Text color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+/* User Card Hover Effect */
+.user-card:hover {
+    transform: scale(1.03); /* Slightly enlarge the card on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* User Card Title Styling */
+.user-card h3 {
+    margin: 0;
+    font-size: 1.5em; /* Larger font size for titles */
+    color: black; /* Title color */
+}
+
+/* User Card Paragraph Styling */
+.user-card p {
+    margin: 5px 0;
+    font-size: 1em; /* Standard font size for paragraphs */
+}
+
+/* Link Styling */
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: rgb(0, 102, 204); /* Blue color for links */
+    font-weight: bold; /* Bold links */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Link Hover Effect */
+a:hover {
+    color: rgb(0, 51, 153); /* Darker blue on hover */
+}
+
+/* File Preview Section */
+.file-preview {
+    margin-top: 10px;
+}
+
+/* File Preview Image Styling */
+.file-preview img {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto;
+    border-radius: 5px; /* Rounded corners for images */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+/* File Preview Iframe Styling */
+.file-preview iframe {
+    width: 100%; /* Ensure iframe takes full width */
+    height: 400px; /* Set default iframe height */
+    border: 1px solid black; /* Black border around iframe */
+    border-radius: 5px; /* Rounded corners for iframe */
+}
+
+/* Media Queries for Responsive Design */
+
+/* Medium Devices (Tablets, 768px and below) */
+@media (max-width: 768px) {
+    #dataSection {
+        max-width: 600px; /* Reduce max width for tablets */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .user-card {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .user-card h3 {
+        font-size: 1.3em; /* Slightly smaller title font size */
+    }
+
+    .user-card p {
+        font-size: 0.95em; /* Slightly smaller paragraph font size */
+    }
+
+    /* Adjust iframe height for medium screens */
+    .file-preview iframe {
+        height: 350px;
+    }
+}
+
+/* Small Devices (Mobile Phones, 500px and below) */
+@media (max-width: 500px) {
+    #dataSection {
+        width: 90%; /* Adjust width to 90% for mobile phones */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .user-card {
+        padding: 8px; /* Reduce padding for small screens */
+    }
+
+    .user-card h3 {
+        font-size: 1.2em; /* Slightly smaller font size for titles */
+    }
+
+    .user-card p {
+        font-size: 0.9em; /* Slightly smaller paragraph font size */
+    }
+
+    /* Adjust link size for smaller screens */
+    a {
+        font-size: 0.9em;
+    }
+
+    /* Adjust iframe height for small screens */
+    .file-preview iframe {
+        height: 300px;
+    }
+}
+
+/* Extra Small Devices (Mobile Phones, 400px and below) */
+@media (max-width: 400px) {
+    #dataSection {
+        padding: 8px; /* Reduce padding further for small screens */
+    }
+
+    .user-card {
+        margin-bottom: 10px; /* Adjust margin for small screens */
+    }
+
+    .user-card h3 {
+        font-size: 1em; /* Further reduce title font size */
+    }
+
+    .user-card p {
+        font-size: 0.8em; /* Further reduce paragraph font size */
+    }
+
+    /* Adjust iframe height for extra small screens */
+    .file-preview iframe {
+        height: 250px; /* Decrease iframe height for small screens */
+    }
+}

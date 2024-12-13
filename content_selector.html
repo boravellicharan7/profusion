@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta information for character encoding and viewport settings -->
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive layout on all devices -->
+
+    <title>Profusion</title> <!-- Title of the page -->
+    <link rel="shortcut icon"
+        href="images/Motivational Typography Design Evoking Nostalgia In Rustic Outdoor Setting.png"
+        type="image/x-icon">
+
+
+    <!-- Link to external CSS stylesheet for page styling -->
+    <link rel="stylesheet" href="content_selector.css">
+
+    <!-- Link to Google Fonts for custom typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Heading for the page -->
+        <h1>Content Creator Zone</h1>
+
+        <!-- Informative paragraph explaining the purpose of the page -->
+        <p>What kind of zone are you interested in creating content about?</p>
+
+        <!-- Dropdown menu for content zone selection -->
+        <select id="contentZone" name="contentZone">
+            <!-- Default option asking user to select a zone -->
+            <option value="">Select a Zone</option>
+
+            <!-- Option values for the different content zones -->
+            <option value="Tech">Technology</option>
+            <option value="Health">Health & Fitness</option>
+            <option value="Travel">Travel</option>
+            <option value="Writer">Writer</option>
+            <option value="Food">Food & Cooking</option>
+            <option value="Education">Education & Tutorials</option>
+        </select>
+
+        <!-- Button to submit the selection -->
+        <button class="button" onclick="submitSelection()">Submit</button>
+
+        <!-- Div to display results after selection -->
+        <div id="result"></div>
+    </div>
+
+    <!-- JavaScript for handling form actions -->
+    <script>
+        // Function to handle the selection and redirection
+        function submitSelection() {
+            // Get the value selected from the dropdown
+            const contentZone = document.getElementById("contentZone").value;
+
+            // Check if the user has selected a zone
+            if (contentZone === "") {
+                // If no zone is selected, show an alert
+                alert("Please select a content zone.");
+            } else {
+                // If a zone is selected, redirect the user to CC2.html with the selected zone as a query parameter
+                window.location.href = `content_creater.html?zone=${encodeURIComponent(contentZone)}`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

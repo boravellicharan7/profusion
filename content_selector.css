@@ -1,0 +1,192 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cinzel+Decorative&family=Funnel+Display:wght@300..800&family=Macondo+Swash+Caps&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Space+Grotesk:wght@300..700&family=WindSong:wght@400;500&display=swap');
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif; /* Sets the default font */
+    background-image: url("./images/Green\ Modern\ Beach\ View\ Desktop\ Wallpaper\ \(1\).png"); /* Background image */
+    background-repeat: no-repeat; /* Ensures background image doesn't repeat */
+    background-size: cover; /* Ensures background covers the entire page */
+    display: flex; /* Flexbox layout for centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Removes default body margin */
+    font-family: "Funnel Display", sans-serif; /* Overrides the default font */
+}
+
+/* Container Styling */
+.container {
+    background: rgba(119, 136, 153, 0.312); /* Semi-transparent background for a modern look */
+    padding: 30px; /* Padding inside the container */
+    text-align: center; /* Center aligns text */
+    border-radius: 10px; /* Rounded corners */
+    width: 100%; /* Ensures full width */
+    max-width: 500px; /* Maximum width for responsiveness */
+    color: black; /* Text color */
+    opacity: 0.9; /* Slight transparency */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 24px; /* Font size for the heading */
+    color: black; /* Text color */
+    margin-bottom: 20px; /* Space below the heading */
+    font-weight: bold; /* Bold font weight */
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px; /* Font size for paragraph */
+    color: black; /* Text color */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Select Dropdown Styling */
+select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the select */
+    font-size: 16px; /* Font size */
+    font-family: 'Roboto', sans-serif; /* Font family */
+    border: 1px solid black; /* Black border */
+    border-radius: 7px; /* Rounded corners */
+    margin-top: 8px; /* Margin above the select */
+    background: transparent; /* Transparent background */
+    color: black; /* Text color */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+/* Hover effect for Select Dropdown */
+select:hover {
+    transform: scale(1.02); /* Scales the element slightly */
+    box-shadow: 0px 4px 10px black; /* Adds shadow on hover */
+}
+
+/* Focus effect for Select Dropdown */
+select:focus {
+    outline: none; /* Removes the default focus outline */
+    border-color: black; /* Changes border color on focus */
+}
+
+/* Button Styling */
+.button {
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold font weight */
+    color: black; /* Text color */
+    background-color: whitesmoke; /* Background color */
+    border: none; /* No border */
+    border-radius: 7px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to pointer */
+    margin: 10px 0; /* Margin around the button */
+    width: 100%; /* Full width */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+/* Hover effect for Button */
+.button:hover {
+    background-color: black; /* Changes background on hover */
+    color: whitesmoke; /* Changes text color on hover */
+    transform: scale(1.05); /* Slightly scales the button */
+}
+
+/* Active effect for Button (on click) */
+.button:active {
+    background-color: black; /* Keeps background dark on click */
+    color: whitesmoke; /* Text remains white */
+}
+
+/* Result Box Styling (hidden by default) */
+#result {
+    display: none; /* Initially hidden */
+    margin-top: 20px; /* Margin above the result box */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: black; /* Text color */
+    text-align: center; /* Centers the text */
+    padding: 10px; /* Padding inside the result box */
+    border: 1px solid black; /* Black border */
+    border-radius: 7px; /* Rounded corners */
+    background: whitesmoke; /* Light background color */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 768px (Tablets, Small Desktop) */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Container width adjusts */
+        padding: 25px; /* Reduced padding */
+    }
+
+    h1 {
+        font-size: 22px; /* Smaller heading font size */
+    }
+
+    p {
+        font-size: 16px; /* Smaller paragraph font size */
+    }
+
+    .button {
+        padding: 8px 15px; /* Reduced padding */
+        font-size: 14px; /* Smaller button text */
+    }
+
+    select {
+        padding: 8px; /* Reduced padding */
+        font-size: 14px; /* Smaller select text */
+    }
+}
+
+/* For screens smaller than 480px (Mobile Phones) */
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* Container width adjusts */
+        padding: 20px; /* Reduced padding */
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller heading font size */
+    }
+
+    p {
+        font-size: 14px; /* Smaller paragraph font size */
+    }
+
+    .button {
+        padding: 8px; /* Reduced padding */
+        font-size: 14px; /* Button font size reduced */
+        width: 100%; /* Full width button */
+        margin: 5px 0; /* Reduced margin */
+    }
+
+    select {
+        font-size: 14px; /* Smaller select font size */
+        padding: 7px; /* Smaller padding */
+    }
+}
+
+/* For screens smaller than 400px (Very Small Screens, Small Phones) */
+@media (max-width: 400px) {
+    .container {
+        padding: 15px; /* Minimal padding for small screens */
+    }
+
+    h1 {
+        font-size: 18px; /* Smaller heading font size */
+    }
+
+    p {
+        font-size: 12px; /* Smaller paragraph font size */
+    }
+
+    .button {
+        font-size: 12px; /* Reduced button font size */
+        padding: 6px 10px; /* Small padding */
+    }
+
+    select {
+        padding: 6px; /* Reduced padding */
+        font-size: 12px; /* Smaller select font size */
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata for the document -->
+    <meta charset="UTF-8"> <!-- Defines character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsiveness on mobile devices -->
+    <title>Profusion</title> <!-- Title displayed on the browser tab -->
+    <link rel="shortcut icon"
+        href="images/Motivational Typography Design Evoking Nostalgia In Rustic Outdoor Setting.png"
+        type="image/x-icon">
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="user_selector.css"> <!-- External CSS file for styling -->
+</head>
+
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Heading for the page -->
+        <h1>Welcome! What brings you here?</h1>
+
+        <!-- Subheading or description -->
+        <p>Are you a content creator or just browsing?</p>
+
+        <!-- Button to redirect to the content creator page -->
+        <button class="button" id="creatorButton" onclick="redirectToCreatorPage()">
+            I'm a Content Creator
+        </button>
+
+        <!-- Button to redirect to the browsing page -->
+        <button class="button" id="browsingButton" onclick="redirectToBrowsingPage()">
+            I'm Just Browsing
+        </button>
+    </div>
+
+    <!-- JavaScript functions for redirection -->
+    <script>
+        /**
+         * Redirects the user to the content creator page.
+         */
+        function redirectToCreatorPage() {
+            window.location.href = "content_selector.html"; // Navigates to content.html
+        }
+
+        /**
+         * Redirects the user to the browsing page.
+         */
+        function redirectToBrowsingPage() {
+            window.location.href = "home.html"; // Navigates to op12.html
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character encoding and viewport settings for responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profusion</title> <!-- Title of the web page -->
+    <link rel="shortcut icon"
+        href="images/Motivational Typography Design Evoking Nostalgia In Rustic Outdoor Setting.png"
+        type="image/x-icon">
+
+    <!-- Importing Elegant Fonts from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styling for the page -->
+    <style>
+        /* Body styling */
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #3a3a3a);
+            /* Elegant dark gradient background */
+            display: flex;
+            /* Flexbox for centering content */
+            justify-content: center;
+            /* Center content horizontally */
+            align-items: center;
+            /* Center content vertically */
+            height: 100vh;
+            /* Full viewport height */
+            margin: 0;
+            /* Remove default margin */
+            font-family: 'Lora', serif;
+            /* Elegant serif font from Google Fonts */
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 100px;
+            /* Large font size for the title */
+            font-weight: bold;
+            /* Bold text */
+            display: flex;
+            /* Flexbox for individual letters */
+            justify-content: center;
+            /* Center content horizontally */
+            align-items: center;
+            /* Center content vertically */
+            margin: 0;
+            /* Remove default margin */
+            color: #fff;
+            /* Luxurious white text */
+            overflow: hidden;
+            /* Hide overflowing text during animation */
+            text-transform: uppercase;
+            /* Uppercase text */
+            letter-spacing: 8px;
+            /* Increase letter spacing for elegance */
+        }
+
+        /* Individual letter styling inside the title */
+        h1 span {
+            opacity: 0;
+            /* Initially hide the letters */
+            display: inline-block;
+            /* Display each letter as a block */
+            animation: reveal 1.5s forwards, transformEffect 2s infinite alternate;
+            /* Apply animations */
+            transition: all 0.5s ease-in-out;
+            /* Smooth transition for changes */
+        }
+
+        /* Animation delay for odd-numbered letters */
+        h1 span:nth-child(odd) {
+            animation-delay: 0.3s;
+            /* Delay for odd letters */
+        }
+
+        /* Animation delay for even-numbered letters */
+        h1 span:nth-child(even) {
+            animation-delay: 0.5s;
+            /* Delay for even letters */
+        }
+
+        /* Keyframe animation for fade-in effect */
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                /* Make letters visible at the end */
+            }
+        }
+
+        /* Keyframe animation for elegant scaling and color change effect */
+        @keyframes transformEffect {
+            0% {
+                transform: scale(0.6);
+                /* Initial smaller scale */
+                color: #f1c40f;
+                /* Elegant gold color */
+            }
+
+            100% {
+                transform: scale(1);
+                /* Final scale */
+                color: #e0e0e0;
+                /* Classy light gray color */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Title -->
+    <h1 id="title">
+        <!-- Individual letters in span tags for animation control -->
+        <span>P</span>
+        <span>r</span>
+        <span>o</span>
+        <span>f</span>
+        <span>u</span>
+        <span>s</span>
+        <span>i</span>
+        <span>o</span>
+        <span>n</span>
+    </h1>
+
+    <script>
+        if (screen.width > 660) {
+            // JavaScript to enhance text animation by adding delays to individual letters
+            document.addEventListener("DOMContentLoaded", () => {
+                const title = document.getElementById("title"); // Get the title element
+                const letters = title.querySelectorAll("span"); // Get all span elements inside the title
+
+                // Loop through each letter and add a delay to its animation
+                letters.forEach((letter, index) => {
+                    letter.style.animationDelay = `${index * 0.2}s`; // Delay based on index of the letter
+                });
+            });
+
+            // Redirect the user to a new page after 5 seconds
+            setTimeout(() => {
+                window.location.href = "login.html"; // Redirect to login page
+            }, 5000);  // 5000 milliseconds (5 seconds)
+        }
+        else {
+            window.location.href = "login.html"
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+/* ============================== */
+/*           Font Imports         */
+/* ============================== */
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cinzel+Decorative&family=Funnel+Display:wght@300..800&family=Macondo+Swash+Caps&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Space+Grotesk:wght@300..700&family=WindSong:wght@400;500&display=swap');
+
+/* ============================== */
+/*          Body Styling          */
+/* ============================== */
+body {
+    background-image: url("./images/Green\ Modern\ Beach\ View\ Desktop\ Wallpaper\ \(1\).png"); /* Background image */
+    background-repeat: no-repeat; /* Prevent repeating the background */
+    background-size: cover; /* Cover the entire screen */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    margin: 0; /* Remove default margin */
+    font-family: "Funnel Display", sans-serif; /* Apply custom font */
+    font-weight: 700; /* Bold font weight */
+}
+
+/* ============================== */
+/*       Section Styling          */
+/* ============================== */
+#loginSection, #registerSection {
+    font-family: "Funnel Display", sans-serif; /* Use custom font */
+    font-weight: 700; /* Bold font weight */
+    padding: 30px; /* Add padding around section */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    width: 90%; /* 90% width for responsiveness */
+    max-width: 500px; /* Maximum width of 500px */
+    background: rgba(119, 136, 153, 0.312); /* LightSlateGrey with transparency */
+    color: black; /* Text color */
+    margin-top: 20px; /* Space between sections */
+}
+
+/* ============================== */
+/*       Form Styling             */
+/* ============================== */
+#loginForm, #registerForm {
+    padding: 20px; /* Add padding inside form */
+    text-align: center; /* Center the text inside form */
+    color: black; /* Form text color */
+}
+
+/* ============================== */
+/*         Input Styling          */
+/* ============================== */
+input {
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    height: 25px; /* Fixed height */
+    width: 100%; /* Full width of container */
+    padding: 10px; /* Padding inside input */
+    background: transparent; /* Transparent background */
+    color: black; /* Text color */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+}
+
+input:hover {
+    transform: scale(1.02); /* Slightly enlarge input on hover */
+}
+
+/* ============================== */
+/*       Password Container       */
+/* ============================== */
+.password-container {
+    position: relative; /* For positioning the eye icon */
+    display: flex;
+    align-items: center; /* Align items horizontally */
+    margin-top: 10px; /* Space between inputs */
+}
+
+.password-container .eye-icon {
+    position: absolute; /* Position the icon absolutely */
+    right: 10px; /* Place it to the right of the input */
+    cursor: pointer; /* Cursor becomes a pointer */
+    color: black; /* Eye icon color */
+}
+
+/* ============================== */
+/*        Message Styling         */
+/* ============================== */
+.error {
+    color: red; /* Red color for error messages */
+    font-size: 12px; /* Smaller font size */
+    margin-top: 5px; /* Space between input and error message */
+}
+
+.success {
+    color: green; /* Green color for success messages */
+    font-size: 14px; /* Slightly larger font size for success */
+}
+
+/* ============================== */
+/*          Button Styling        */
+/* ============================== */
+button[type="submit"], #CreateAcc {
+    border-radius: 7px; /* Rounded corners for buttons */
+    padding: 8px 20px; /* Padding inside buttons */
+    color: black; /* Button text color */
+    background-color: whitesmoke; /* Light background color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Cursor changes to pointer */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    font-family: "Roboto", sans-serif; /* Custom font for button */
+    font-weight: 500; /* Medium weight font */
+}
+
+button[type="submit"]:hover, #CreateAcc:hover {
+    background-color: black; /* Dark background on hover */
+    color: whitesmoke; /* White text on hover */
+}
+
+/* ============================== */
+/*          Link Styling          */
+/* ============================== */
+.link a {
+    text-decoration: none; /* Remove underline from links */
+    color: blue; /* Blue color for links */
+    font-weight: bold; /* Bold font for links */
+    transition: color 0.3s ease; /* Smooth color change */
+}
+
+.link a:hover {
+    color: darkblue; /* Dark blue color on hover */
+}
+
+/* ============================== */
+/*           Media Queries        */
+/* ============================== */
+
+/* For devices with width up to 768px */
+@media (max-width: 768px) {
+    #loginSection, #registerSection {
+        margin-top: 30px; /* More top margin on smaller screens */
+        padding: 20px; /* Reduced padding */
+    }
+    
+    body {
+        justify-content: flex-start; /* Align content to top */
+        padding-top: 20px; /* Add top padding */
+    }
+}
+
+/* For devices with width up to 480px (small screens) */
+@media (max-width: 480px) {
+    #loginSection, #registerSection {
+        margin-top: 20px; /* Smaller margin on mobile */
+        width: 95%; /* Increase width to 95% */
+    }
+    
+    button[type="submit"], #CreateAcc {
+        padding: 10px; /* Increase padding */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    input {
+        padding: 8px; /* Smaller padding inside inputs */
+    }
+}

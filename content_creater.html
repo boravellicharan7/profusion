@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags for character encoding and viewport settings -->
+    <meta charset="UTF-8"> <!-- Ensures proper character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile devices -->
+    
+    <!-- Title of the page -->
+    <title>Profusion</title>
+    <link rel="shortcut icon" href="images/Motivational Typography Design Evoking Nostalgia In Rustic Outdoor Setting.png" type="image/x-icon">
+
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="content_creater.css">
+</head>
+
+<body>
+    <!-- Main content creator section -->
+    <div id="content-creator-tab">
+        <!-- Heading with dynamic user name display -->
+        <h2>Hey, <span id="userNameDisplay">User</span>!</h2>
+        
+        <!-- Paragraph to describe the purpose of the page -->
+        <p>Share your thoughts, ideas, or files with the community.</p>
+        
+        <!-- Section to handle content upload (name, thoughts, and files) -->
+        <div class="upload-section">
+            <!-- Input field for creator's name -->
+            <input type="text" id="creatorName" placeholder="Enter your name" oninput="updateUserName()" />
+            
+            <!-- Textarea for creator's thoughts -->
+            <textarea id="creatorThoughts" placeholder="Write your thoughts here..." rows="3" oninput="autoExpand(this)"></textarea>
+            
+            <!-- Commented out: Input for file upload (e.g., PDF, image, document) -->
+            <!-- <input type="file" id="contentFile" accept=".pdf,.png,.jpg,.jpeg,.docx" /> -->
+            
+            <!-- Button to trigger content upload action -->
+            <button id="button" onclick="uploadContent()">Upload Content</button>
+        </div>
+        
+        <!-- Button to redirect user to another page showing content from others -->
+        <button id="curiosity-button" onclick="redirectToContentPage()">Are you curious what others have shared?</button>
+    </div>
+
+    <!-- JavaScript for handling various functions -->
+    <script>
+        // Function to retrieve query parameter value from URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param); // Returns the value of the specified query parameter
+        }
+
+        // Function to set the background image based on the selected zone
+        function setBackground(zone) {
+            const body = document.body;
+
+            // Define different background images for different zones
+            const zoneBackgrounds = {
+                Tech: "url('images/technology.jpg')",
+                Health: "url('images/healthfitness.jpg')",
+                Travel: "url('images/travelling.jpg')",
+                Writer: "url('images/writer.jpg')",
+                Food: "url('images/cooking.jpg')",
+                Education: "url('images/education.jpg')"
+            };
+
+            // Set background based on the selected zone; default background if zone not found
+            body.style.backgroundImage = zoneBackgrounds[zone] || "url('images/workingtogether.jpg')";
+        }
+
+        // Get the selected zone from the query parameter 'zone'
+        const selectedZone = getQueryParam('zone');
+        
+        // Call the setBackground function with the selected zone
+        setBackground(selectedZone);
+
+        // Function to redirect user to another page (content page)
+        function redirectToContentPage() {
+            window.location.href = 'home.html'; // Redirects to the page displaying others' content
+        }
+    </script>
+
+    <!-- Firebase scripts for Firebase services -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <!-- Link to an external JavaScript file for Firebase setup and logic -->
+    <script src="firebasecode.js"></script>
+</body>
+</html>

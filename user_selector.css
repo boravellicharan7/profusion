@@ -1,0 +1,135 @@
+/* ============================== */
+/*           Font Imports         */
+/* ============================== */
+
+/* Importing multiple fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cinzel+Decorative&family=Funnel+Display:wght@300..800&family=Macondo+Swash+Caps&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Space+Grotesk:wght@300..700&family=WindSong:wght@400;500&display=swap');
+
+/* ============================== */
+/*            Body Styling        */
+/* ============================== */
+
+/* Styling for the body element */
+body {
+   font-family: "Roboto", sans-serif; /* Set default font */
+   background-image: url("./images/Green\ Modern\ Beach\ View\ Desktop\ Wallpaper\ \(1\).png"); /* Background image */
+   background-repeat: no-repeat; /* Prevent background repetition */
+   background-size: cover; /* Ensure the background covers the entire viewport */
+   display: flex; /* Enable flexbox */
+   justify-content: center; /* Center horizontally */
+   align-items: center; /* Center vertically */
+   height: 100vh; /* Full height of the viewport */
+   margin: 0; /* Remove default margin */
+   font-family: "Funnel Display", sans-serif; /* Set a custom font for the body */
+}
+
+/* ============================== */
+/*            Container          */
+/* ============================== */
+
+/* Styling for the main container element */
+.container {
+   background: rgba(119, 136, 153, 0.312); /* Light gray background with transparency */
+   padding: 30px; /* Padding around the content */
+   text-align: center; /* Center text */
+   border-radius: 10px; /* Rounded corners */
+   width: 100%; /* Full width of the container */
+   max-width: 400px; /* Max width of 400px */
+   color: black; /* Text color */
+   opacity: 0.9; /* Slight transparency */
+}
+
+/* ============================== */
+/*             Headings           */
+/* ============================== */
+
+/* Styling for the main heading (h1) */
+h1 {
+   font-size: 24px; /* Font size */
+   color: black; /* Text color */
+   margin-bottom: 20px; /* Space below the heading */
+   font-weight: bold; /* Bold font */
+}
+
+/* Styling for the paragraph */
+p {
+   font-size: 18px; /* Font size */
+   color: black; /* Text color */
+   margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* ============================== */
+/*            Button Styling      */
+/* ============================== */
+
+/* Styling for the buttons */
+.button {
+   padding: 10px 20px; /* Padding inside the button */
+   font-size: 16px; /* Font size */
+   font-weight: bold; /* Bold text */
+   color: whitesmoke; /* Text color */
+   background-color: black; /* Background color */
+   border: none; /* Remove default border */
+   border-radius: 7px; /* Rounded corners */
+   cursor: pointer; /* Pointer cursor on hover */
+   margin: 10px; /* Space around buttons */
+   width: 45%; /* Button width */
+   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover and active states */
+}
+
+/* Hover effect for the buttons */
+.button:hover {
+   background-color: whitesmoke; /* Change background on hover */
+   color: black; /* Change text color */
+   transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Active state for the button */
+.button:active {
+   background-color: whitesmoke; /* Maintain hover background */
+   color: black; /* Maintain hover text color */
+}
+
+/* ============================== */
+/*          Media Queries        */
+/* ============================== */
+
+/* Media query for devices with screen width max of 768px (Tablets and small screens) */
+@media (max-width: 768px) {
+   .container {
+       padding: 25px; /* Adjust padding */
+   }
+
+   h1 {
+       font-size: 22px; /* Adjust heading font size */
+   }
+
+   p {
+       font-size: 16px; /* Adjust paragraph font size */
+   }
+
+   .button {
+       width: 48%; /* Adjust button width for better alignment */
+   }
+}
+
+/* Media query for devices with screen width max of 480px (Mobile devices) */
+@media (max-width: 480px) {
+   .container {
+       padding: 20px; /* Further reduce padding for small screens */
+       width: 90%; /* Container width adjusted */
+   }
+
+   h1 {
+       font-size: 20px; /* Adjust heading font size for smaller screens */
+   }
+
+   p {
+       font-size: 14px; /* Adjust paragraph font size for smaller screens */
+   }
+
+   .button {
+       width: 100%; /* Make buttons full-width */
+       margin: 5px 0; /* Adjust button spacing */
+   }
+}

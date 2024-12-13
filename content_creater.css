@@ -1,0 +1,234 @@
+/* ============================== */
+/*           Font Imports         */
+/* ============================== */
+
+/* Importing multiple fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cinzel+Decorative&family=Funnel+Display:wght@300..800&family=Macondo+Swash+Caps&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Space+Grotesk:wght@300..700&family=WindSong:wght@400;500&display=swap');
+
+/* ============================== */
+/*            Body Styling        */
+/* ============================== */
+
+/* Styling for the body element */
+body {
+   font-family: Arial, sans-serif; /* Fallback font */
+   margin: 0; /* Remove default margin */
+   padding: 0; /* Remove default padding */
+   background-image: url('your-background-image.jpg'); /* Set background image */
+   background-repeat: no-repeat; /* Prevent background repetition */
+   background-size: cover; /* Ensure the background covers the entire viewport */
+   display: flex; /* Enable flexbox layout */
+   justify-content: center; /* Center content horizontally */
+   align-items: center; /* Center content vertically */
+   min-height: 100vh; /* Ensure the body occupies full viewport height */
+   transition: background 0.5s ease; /* Smooth transition for background changes */
+   font-family: "Funnel Display", sans-serif; /* Apply the custom font */
+}
+
+/* ============================== */
+/*           Heading Styling      */
+/* ============================== */
+
+/* Styling for secondary heading (h2) */
+h2 {
+   color: black; /* Set text color */
+   text-align: center; /* Center the heading */
+   margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Styling for paragraph elements */
+p {
+   color: black; /* Set text color */
+   text-align: center; /* Center the paragraph text */
+}
+
+/* ============================== */
+/*        Content Creator Tab    */
+/* ============================== */
+
+/* Styling for the main content creator section */
+#content-creator-tab {
+   background: rgba(119, 136, 153, 0.312); /* Semi-transparent gray background */
+   padding: 40px; /* Padding around the content */
+   border-radius: 15px; /* Rounded corners */
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+   width: 100%; /* Full width */
+   max-width: 500px; /* Max width for larger screens */
+   backdrop-filter: blur(15px); /* Blurred background effect */
+   border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+   color: black; /* Text color */
+}
+
+/* ============================== */
+/*        Upload Section Styling  */
+/* ============================== */
+
+/* Styling for the upload section within the content creator tab */
+.upload-section {
+   display: flex; /* Use flexbox for layout */
+   flex-direction: column; /* Arrange items vertically */
+   gap: 15px; /* Space between elements */
+   margin-top: 15px; /* Margin above the section */
+}
+
+/* Styling for input, textarea, and file input fields */
+input[type="text"],
+textarea,
+input[type="file"] {
+   width: 100%; /* Full width of the container */
+   padding: 10px; /* Padding inside input fields */
+   border: 1px solid rgba(255, 255, 255, 0.6); /* Border color */
+   border-radius: 5px; /* Rounded corners */
+   font-size: 14px; /* Font size */
+   background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+   color: black; /* Text color */
+   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+   transition: border-color 0.3s ease; /* Smooth transition for border color on focus */
+}
+
+/* Prevent textarea resizing */
+textarea {
+   resize: none; /* Disable resizing */
+   overflow: hidden; /* Hide overflow */
+}
+
+/* Styling for focused input and textarea fields */
+input[type="text"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+   outline: none; /* Remove outline */
+   border-color: #3498db; /* Change border color on focus */
+}
+
+/* ============================== */
+/*             Button Styling     */
+/* ============================== */
+
+/* Styling for the main button (#button) */
+#button {
+   padding: 10px; /* Padding inside the button */
+   border: none; /* Remove default border */
+   border-radius: 5px; /* Rounded corners */
+   background: #3498db; /* Background color */
+   color: black; /* Text color */
+   font-size: 14px; /* Font size */
+   cursor: pointer; /* Pointer cursor on hover */
+   width: 30%; /* Button width */
+   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+/* Hover effect for the main button */
+#button:hover {
+   background: #2980b9; /* Darker blue on hover */
+   transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* ============================== */
+/*         Curiosity Button Styling*/
+/* ============================== */
+
+/* Styling for curiosity button (#curiosity-button) */
+#curiosity-button {
+   width: 100%; /* Full width of the parent container */
+   margin-top: 20px; /* Space above the button */
+   padding: 10px 20px; /* Padding inside the button */
+   font-size: 1.1em; /* Font size */
+   background: transparent; /* Transparent background */
+   color: black; /* Text color */
+   border: none; /* Remove default border */
+   cursor: pointer; /* Pointer cursor on hover */
+   transition: background-color 0.3s ease-in-out, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover effect for the curiosity button */
+#curiosity-button:hover {
+   background-color: black; /* Dark background on hover */
+   color: whitesmoke; /* Light text color */
+   transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* ============================== */
+/*        Media Queries for Responsiveness */
+/* ============================== */
+
+/* Media query for devices with screen width max of 768px (Tablets and small screens) */
+@media (max-width: 768px) {
+   #content-creator-tab {
+       width: 80%; /* Reduced width */
+       padding: 30px; /* Reduced padding */
+   }
+
+   h2 {
+       font-size: 20px; /* Adjust font size for heading */
+   }
+
+   p {
+       font-size: 16px; /* Adjust font size for paragraph */
+   }
+
+   button,
+   #curiosity-button {
+       font-size: 14px; /* Adjust font size for buttons */
+   }
+
+   input[type="text"],
+   textarea {
+       font-size: 14px; /* Adjust font size for input fields */
+   }
+}
+
+/* Media query for devices with screen width max of 480px (Mobile devices) */
+@media (max-width: 480px) {
+   #content-creator-tab {
+       width: 90%; /* Further reduced width */
+       padding: 20px; /* Further reduced padding */
+   }
+
+   h2 {
+       font-size: 18px; /* Adjust font size for heading */
+   }
+
+   p {
+       font-size: 14px; /* Adjust font size for paragraph */
+   }
+
+   button,
+   #curiosity-button {
+       padding: 8px; /* Adjust button padding */
+       font-size: 12px; /* Adjust button font size */
+   }
+
+   input[type="text"],
+   textarea {
+       font-size: 12px; /* Adjust input field font size */
+       padding: 8px; /* Adjust padding for input fields */
+   }
+}
+
+/* Media query for devices with screen width max of 400px (Very small screens) */
+@media (max-width: 400px) {
+   #content-creator-tab {
+       width: 95%; /* Max width of 95% */
+       padding: 15px; /* Further reduced padding */
+   }
+
+   h2 {
+       font-size: 16px; /* Further reduce heading font size */
+   }
+
+   p {
+       font-size: 12px; /* Further reduce paragraph font size */
+   }
+
+   button,
+   #curiosity-button {
+       padding: 6px; /* Reduced button padding */
+       font-size: 10px; /* Reduced button font size */
+   }
+
+   input[type="text"],
+   textarea {
+       font-size: 10px; /* Reduced input field font size */
+       padding: 6px; /* Reduced padding for input fields */
+   }
+}
