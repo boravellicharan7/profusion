@@ -11,6 +11,7 @@
         type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -18,14 +19,11 @@
         <h1>Login</h1>
 
         <form id="loginForm" onsubmit="return validateLoginForm()">
-            <!-- <label for="loginEmail" style="text-align: left;">Email</label> -->
             <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
             <div id="loginEmailError" class="error"></div>
 
-            <!-- <label for="loginEmail">Password</label> -->
             <div class="password-container">
-                <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password"
-                    required>
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required>
                 <span class="eye-icon" id="eyeIconLogin"
                     onclick="togglePasswordVisibility('loginPassword', 'eyeIconLogin')">👁</span>
             </div>
@@ -42,23 +40,18 @@
     <div id="registerSection" style="display: none;">
         <h1>Register</h1>
         <form id="registerForm">
-            <!-- <label for="loginEmail" style="text-align: left;">Email</label> -->
             <input type="email" id="registerEmail" name="registerEmail" placeholder="Enter your email" required>
             <div id="registerEmailError" class="error"></div>
 
-            <!-- <label for="loginEmail">Password</label> -->
             <div class="password-container">
-                <input type="password" id="registerPassword" name="registerPassword" placeholder="Enter your password"
-                    required>
+                <input type="password" id="registerPassword" name="registerPassword" placeholder="Enter your password" required>
                 <span class="eye-icon" id="eyeIconRegister"
                     onclick="togglePasswordVisibility('registerPassword', 'eyeIconRegister')">👁</span>
             </div>
             <div id="registerPasswordError" class="error"></div>
 
-            <!-- <label for="loginEmail">Confirm Password</label> -->
             <div class="password-container">
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"
-                    required>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
                 <span class="eye-icon" id="eyeIconConfirm"
                     onclick="togglePasswordVisibility('confirmPassword', 'eyeIconConfirm')">👁</span>
             </div>
@@ -68,10 +61,7 @@
         </form>
         <div class="link">Already have an account? <a href="javascript:void(0);" onclick="toggleSection('login')">Log
                 in</a></div>
-        <div id="signUpMessage" class="messageDiv" style="display: none;"></div>
     </div>
-
-    <div id="loginSuccess" class="success" style="display: none;">Login Successful!</div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
@@ -94,7 +84,6 @@
         function toggleSection(section) {
             document.getElementById('loginSection').style.display = section === 'login' ? 'block' : 'none';
             document.getElementById('registerSection').style.display = section === 'register' ? 'block' : 'none';
-            document.getElementById('loginSuccess').style.display = 'none';
         }
 
         function validateLoginForm() {
@@ -103,12 +92,11 @@
 
             signInWithEmailAndPassword(auth, email, password)
                 .then(() => {
-                    document.getElementById('loginSuccess').style.display = 'block';
-                    document.getElementById('loginPasswordError').innerHTML = '';
-                    window.location.href = "user_selector.html"
+                    Swal.fire('Success', 'Login Successful!', 'success');
+                    setTimeout(() => window.location.href = "user_selector.html", 2000);
                 })
                 .catch(() => {
-                    document.getElementById('loginPasswordError').innerHTML = 'Invalid email or password.';
+                    Swal.fire('Error', 'Invalid email or password.', 'error');
                 });
 
             return false;
@@ -120,33 +108,30 @@
             const confirmPassword = document.getElementById('confirmPassword').value;
 
             if (password !== confirmPassword) {
-                document.getElementById('confirmPasswordError').innerText = 'Passwords do not match.';
+                Swal.fire('Error', 'Passwords do not match.', 'error');
                 return;
             }
 
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    const userData = { email };
-
-                    return setDoc(doc(db, "users", user.uid), userData);
+                    return setDoc(doc(db, "users", user.uid), { email });
                 })
                 .then(() => {
-                    showMessage("Account created successfully!", "signUpMessage");
+                    Swal.fire('Success', 'Account created successfully!', 'success');
                     toggleSection('login');
                 })
                 .catch((error) => {
                     const errorMessage = error.code === 'auth/email-already-in-use'
                         ? 'Email address already in use.'
                         : 'Failed to create account.';
-                    showMessage(errorMessage, "signUpMessage");
+                    Swal.fire('Error', errorMessage, 'error');
                 });
         });
 
         function togglePasswordVisibility(passwordId, iconId) {
             const passwordField = document.getElementById(passwordId);
             const eyeIcon = document.getElementById(iconId);
-
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
                 eyeIcon.textContent = '🙈';
@@ -155,18 +140,10 @@
                 eyeIcon.textContent = '👁';
             }
         }
-        window.toggleSection = toggleSection;
-        window.togglePasswordVisibility = togglePasswordVisibility;
-        window.validateLoginForm = validateLoginForm;
 
-        function showMessage(message, divId) {
-            const messageDiv = document.getElementById(divId);
-            messageDiv.style.display = 'block';
-            messageDiv.innerHTML = message;
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, 3000);
-        }
+        window.toggleSection = toggleSection;
+        window.validateLoginForm = validateLoginForm;
+        window.togglePasswordVisibility = togglePasswordVisibility;
     </script>
 </body>
 

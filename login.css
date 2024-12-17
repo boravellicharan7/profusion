@@ -18,6 +18,7 @@ body {
     margin: 0; /* Remove default margin */
     font-family: "Funnel Display", sans-serif; /* Apply custom font */
     font-weight: 700; /* Bold font weight */
+    padding: 10px; /* Add some padding for smaller devices */
 }
 
 /* ============================== */
@@ -29,11 +30,12 @@ body {
     padding: 30px; /* Add padding around section */
     border-radius: 10px; /* Rounded corners */
     text-align: center; /* Center the text */
-    width: 90%; /* 90% width for responsiveness */
+    width: 100%; /* 100% width for responsiveness */
     max-width: 500px; /* Maximum width of 500px */
     background: rgba(119, 136, 153, 0.312); /* LightSlateGrey with transparency */
     color: black; /* Text color */
     margin-top: 20px; /* Space between sections */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* ============================== */
@@ -49,18 +51,21 @@ body {
 /*         Input Styling          */
 /* ============================== */
 input {
-    border: none; /* Remove default border */
+    border: 1px solid #ccc; /* Light border */
     border-radius: 10px; /* Rounded corners */
-    height: 25px; /* Fixed height */
+    height: 45px; /* Fixed height */
     width: 100%; /* Full width of container */
     padding: 10px; /* Padding inside input */
-    background: transparent; /* Transparent background */
+    background: white; /* White background */
     color: black; /* Text color */
-    transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+    font-size: 16px; /* Slightly larger font size */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
-input:hover {
-    transform: scale(1.02); /* Slightly enlarge input on hover */
+input:hover, input:focus {
+    transform: scale(1.03); /* Slightly enlarge input on hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    outline: none;
 }
 
 /* ============================== */
@@ -78,6 +83,7 @@ input:hover {
     right: 10px; /* Place it to the right of the input */
     cursor: pointer; /* Cursor becomes a pointer */
     color: black; /* Eye icon color */
+    font-size: 18px;
 }
 
 /* ============================== */
@@ -99,19 +105,21 @@ input:hover {
 /* ============================== */
 button[type="submit"], #CreateAcc {
     border-radius: 7px; /* Rounded corners for buttons */
-    padding: 8px 20px; /* Padding inside buttons */
+    padding: 10px 25px; /* Padding inside buttons */
     color: black; /* Button text color */
     background-color: whitesmoke; /* Light background color */
-    border: none; /* Remove border */
+    border: 1px solid #ddd; /* Border for buttons */
     cursor: pointer; /* Cursor changes to pointer */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     font-family: "Roboto", sans-serif; /* Custom font for button */
     font-weight: 500; /* Medium weight font */
+    font-size: 16px;
 }
 
 button[type="submit"]:hover, #CreateAcc:hover {
     background-color: black; /* Dark background on hover */
     color: whitesmoke; /* White text on hover */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================== */
@@ -122,6 +130,7 @@ button[type="submit"]:hover, #CreateAcc:hover {
     color: blue; /* Blue color for links */
     font-weight: bold; /* Bold font for links */
     transition: color 0.3s ease; /* Smooth color change */
+    font-size: 14px;
 }
 
 .link a:hover {
@@ -132,56 +141,61 @@ button[type="submit"]:hover, #CreateAcc:hover {
 /*           Media Queries        */
 /* ============================== */
 
-/* For large screens (above 1200px) */
+/* Large screens (above 1200px) */
 @media (min-width: 1200px) {
-    body {
-        justify-content: center; /* Center the content vertically and horizontally */
-    }
-
     #loginSection, #registerSection {
-        width: 40%; /* Reduced width for large screens */
-        padding: 50px; /* Increased padding */
+        max-width: 450px; /* Slightly smaller width */
+        padding: 50px;
     }
 }
 
-/* For tablets and mid-sized screens (up to 1024px) */
-@media (max-width: 1024px) {
+/* Tablets (between 768px and 1200px) */
+@media (max-width: 1200px) {
     #loginSection, #registerSection {
-        width: 60%; /* Slightly reduced width for tablets */
-        padding: 40px; /* Adjusted padding */
-    }
-
-    body {
-        justify-content: flex-start; /* Align content to the top */
+        max-width: 70%;
+        padding: 40px;
     }
 }
 
-/* For devices with width up to 768px */
+/* Mobile devices (below 768px) */
 @media (max-width: 768px) {
-    #loginSection, #registerSection {
-        margin-top: 30px; /* More top margin on smaller screens */
-        padding: 20px; /* Reduced padding */
-    }
-    
     body {
-        justify-content: flex-start; /* Align content to top */
-        padding-top: 20px; /* Add top padding */
+        padding: 10px; /* Adjust padding */
     }
-}
 
-/* For devices with width up to 480px (small screens) */
-@media (max-width: 480px) {
     #loginSection, #registerSection {
-        margin-top: 20px; /* Smaller margin on mobile */
-        width: 95%; /* Increase width to 95% */
+        width: 95%; /* Use more screen width */
+        padding: 25px; /* Reduce padding */
     }
-    
+
     button[type="submit"], #CreateAcc {
-        padding: 10px; /* Increase padding */
-        font-size: 14px; /* Smaller font size */
+        padding: 10px; /* Adjust button size */
+        font-size: 14px; /* Smaller button font size */
     }
 
     input {
-        padding: 8px; /* Smaller padding inside inputs */
+        height: 40px; /* Smaller input height */
+    }
+}
+
+/* Small screens (below 480px) */
+@media (max-width: 480px) {
+    #loginSection, #registerSection {
+        width: 100%; /* Full width */
+        padding: 20px; /* Reduced padding */
+    }
+
+    button[type="submit"], #CreateAcc {
+        font-size: 12px; /* Smaller font size */
+        padding: 8px; /* Adjust padding */
+    }
+
+    input {
+        height: 35px; /* Even smaller input height */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .link a {
+        font-size: 12px;
     }
 }

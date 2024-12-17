@@ -10,11 +10,19 @@
         href="images/Motivational Typography Design Evoking Nostalgia In Rustic Outdoor Setting.png"
         type="image/x-icon">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    <!-- Logout Button at Top-Right Corner -->
+    <button id="logoutBtn" class="btn btn-danger logout-btn">Logout</button>
+    
+    <!-- Main Content Section -->
     <div id="dataSection">
-        <h1>User Data</h1>
+        <h1 class="mb-4">User Data</h1>
         <div id="userDataDisplay"></div>
     </div>
 
@@ -22,8 +30,13 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
 
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
-        // Firebase Configuration (Ensure this is the same as on your main page)
+        // Firebase Configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDHEcml3aP5X8H6iY3qNnjmoIYKE6WZ4Cc",
             authDomain: "profusion-55ee5.firebaseapp.com",
@@ -32,22 +45,18 @@
             messagingSenderId: "705597166854",
             appId: "1:705597166854:web:f714caa1b9141a93353a87"
         };
-
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        // Function to fetch and display user data
+        // Function to Fetch and Display User Data
         async function displayUserData() {
             const displayDiv = document.getElementById('userDataDisplay');
-            displayDiv.innerHTML = ""; // Clear any previous data
+            displayDiv.innerHTML = "";
 
             try {
-                // Fetch data from Firestore collection "contents"
                 const querySnapshot = await db.collection("contents").get();
                 const firebaseData = querySnapshot.docs.map(doc => doc.data());
 
-                // Check if data exists and display it
                 if (firebaseData.length === 0) {
                     const noDataMessage = document.createElement('p');
                     noDataMessage.textContent = "No user data available!";
@@ -64,7 +73,7 @@
             }
         }
 
-        // Function to create a user data card
+        // Function to Create a User Data Card
         function createUserCard(data) {
             const userCard = document.createElement('div');
             userCard.className = 'user-card';
@@ -85,7 +94,26 @@
             return userCard;
         }
 
-        // Call the function to display user data on page load
+        // SweetAlert for Logout Confirmation
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You will be logged out and redirected to the login page.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, Logout",
+                cancelButtonText: "Cancel",
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirect to login page
+                    window.location.href = "login.html";
+                }
+            });
+        });
+
+        // Call displayUserData on page load
         displayUserData();
     </script>
 </body>
